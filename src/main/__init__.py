@@ -28,6 +28,13 @@ def config_logger():
     default_handler.setFormatter(formatter)
 
 
+def register_blueprints(app):
+    from main.api import api_bp, api
+    from flask_restx import apidoc
+
+    app.register_blueprint(api_bp)
+
+
 def create_app(app_settings):
     config_logger()
     app = Flask(__name__)
@@ -38,5 +45,7 @@ def create_app(app_settings):
 
     # Databases setup
     db.init_app(app)
+
+    register_blueprints(app)
 
     return app
