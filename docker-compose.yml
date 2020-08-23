@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+    network_mode: bridge
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/usr/src/app
+    restart: always
+    ports:
+      - "23005:8000"
+
