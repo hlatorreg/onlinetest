@@ -13,4 +13,3 @@ class DevelopmentConfig:
     SECRET_KEY = os.getenv("SECRET_KEY")
     SWAGGER_UI_DOC_EXPANSION = "list"
     RESTX_MASK_SWAGGER = False
-    BCRYPT_LOG_ROUNDS = 4

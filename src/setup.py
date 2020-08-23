@@ -21,7 +21,6 @@ INSTALL_REQUIRES = [
     "flask-restx==0.2.0",
     "Flask-Cors==3.0.8",
     "marshmallow-sqlalchemy==0.23.1",
-    "mysqlclient==1.4.6",
     "pyjwt",
 ]
 
