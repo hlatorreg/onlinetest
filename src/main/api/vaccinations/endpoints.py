@@ -27,6 +27,7 @@ vaccination_ns.models[vaccinations_model.name] = vaccinations_model
 @vaccination_ns.response(
     int(HTTPStatus.INTERNAL_SERVER_ERROR), "Internal server error."
 )
+@vaccination_ns.response(int(HTTPStatus.UNAUTHORIZED), "Unauthorized.")
 class Vaccination(Resource):
     """Handles HTTP requests to URL: /api/v1/vaccination"""
 
@@ -59,6 +60,7 @@ class Vaccination(Resource):
 @vaccination_ns.response(
     int(HTTPStatus.INTERNAL_SERVER_ERROR), "Internal server error."
 )
+@vaccination_ns.response(int(HTTPStatus.UNAUTHORIZED), "Unauthorized.")
 class VaccinationById(Resource):
     """Handles HTTP requests to URL: /api/v1/vaccination/<id>"""
 

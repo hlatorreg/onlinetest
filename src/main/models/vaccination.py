@@ -13,7 +13,6 @@ class Vaccination(Base):
     def check_rut(self):
         try:
             self.__clean_rut()
-            print(self.rut)
             dv = self.rut[-1:]
             digitos = map(int, reversed(str(self.rut[:-1])))
             serie = range(2, 8)
@@ -21,7 +20,7 @@ class Vaccination(Base):
             for i, d in enumerate(digitos):
                 suma += d * serie[i] if i < len(serie) else d * serie[i - len(serie)]
             calculated_dv = (-suma) % 11
-            if dv == str(calculated_dv) or dv == "K" and calculated_dv == 10:
+            if dv == str(calculated_dv) or dv in ["K", "k"] and calculated_dv == 10:
                 return True
             return False
         except Exception:
