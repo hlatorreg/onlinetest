@@ -19,6 +19,7 @@ drugs_ns.models[drugs_model.name] = drugs_model
 
 @drugs_ns.route("/drugs", endpoint="drugs")
 @drugs_ns.response(int(HTTPStatus.INTERNAL_SERVER_ERROR), "Internal server error.")
+@drugs_ns.response(int(HTTPStatus.UNAUTHORIZED), "Unauthorized.")
 class Drugs(Resource):
     """Handles HTTP requests to URL: /api/v1/drugs"""
 
@@ -34,6 +35,7 @@ class Drugs(Resource):
 @drugs_ns.route("/drugs/<id>", endpoint="drug_by_id")
 @drugs_ns.response(int(HTTPStatus.NOT_FOUND), "Drug not found.")
 @drugs_ns.response(int(HTTPStatus.INTERNAL_SERVER_ERROR), "Internal server error.")
+@drugs_ns.response(int(HTTPStatus.UNAUTHORIZED), "Unauthorized.")
 class DrugById(Resource):
     """Handles HTTP requests to URL: /api/v1/drugs/<id>"""
 
@@ -49,6 +51,7 @@ class DrugById(Resource):
 @drugs_ns.route("/drug", endpoint="create_drug")
 @drugs_ns.response(int(HTTPStatus.BAD_REQUEST), "Validation error.")
 @drugs_ns.response(int(HTTPStatus.INTERNAL_SERVER_ERROR), "Internal server error.")
+@drugs_ns.response(int(HTTPStatus.UNAUTHORIZED), "Unauthorized.")
 class CreateDrug(Resource):
     """Handles HTTP requests to URL: /api/v1/drug"""
 
@@ -68,6 +71,7 @@ class CreateDrug(Resource):
 @drugs_ns.response(int(HTTPStatus.NOT_FOUND), "Drug not found.")
 @drugs_ns.response(int(HTTPStatus.BAD_REQUEST), "Validation error.")
 @drugs_ns.response(int(HTTPStatus.INTERNAL_SERVER_ERROR), "Internal server error.")
+@drugs_ns.response(int(HTTPStatus.UNAUTHORIZED), "Unauthorized.")
 class DrugManipulation(Resource):
     """Handles HTTP requests to URL: /api/v1/drug/<id>"""
 

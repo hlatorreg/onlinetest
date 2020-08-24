@@ -23,6 +23,9 @@ INSTALL_REQUIRES = [
     "marshmallow-sqlalchemy==0.23.1",
     "mysqlclient==1.4.6",
     "pyjwt",
+    "pytest",
+    "pytest-flask",
+    "pytest-clarity",
 ]
 
 setup(
