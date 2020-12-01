@@ -9,4 +9,4 @@
 
 - ``docker-compose build``
 - ``docker-compose up``
-- Go to 127.0.0.1:23005/api/1/ui for swagger documentation
+- Go to 127.0.0.1:23005/api/1/ui for swagger documentation :)
